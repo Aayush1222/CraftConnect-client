@@ -2,41 +2,99 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh; // Center vertically
+  background-color: #f7f7f7; // Light background color
 
   form {
     width: 360px;
-    padding: 100px 0px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow
+    transition: transform 0.3s, box-shadow 0.3s; // Smooth transition for hover effects
+
+    &:hover {
+      transform: scale(1.03); // Slightly enlarge the form on hover
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Enhance shadow on hover
+    }
 
     h1 {
       color: gray;
       margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .forgot-password-container {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .forgot-password {
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #000; // Darker color on hover
+      }
     }
 
     label {
       color: gray;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     input,
     textarea {
-      padding: 20px;
+      padding: 15px;
       border: 1px solid rgb(216, 214, 214);
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        border-color: #888; // Change border color on hover
+      }
+
+      &:focus {
+        border-color: #604237; // Highlight border on focus
+        box-shadow: 0 0 5px rgba(96, 66, 55, 0.5); // Subtle glow effect
+        outline: none;
+      }
     }
 
     button {
       border: none;
-      padding: 20px;
+      padding: 15px;
       color: white;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 16px;
       background-color: #604237;
       cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #50362d; // Darker shade on hover
+        transform: translateY(-2px); // Slight lift effect on hover
+      }
+
+      &:active {
+        transform: translateY(0); // Reset lift on click
+      }
     }
 
-    span{
+    span {
       color: red;
       font-size: 12px;
     }

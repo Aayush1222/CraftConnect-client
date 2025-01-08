@@ -15,7 +15,7 @@ function Login() {
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/")
+      navigate("/");
     } catch (err) {
       setError(err.response.data);
     }
@@ -25,22 +25,33 @@ function Login() {
     <div className="login">
       <form onSubmit={handleSubmit}>
         <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
+        <label htmlFor="username">Username</label>
         <input
           name="username"
           type="text"
-          placeholder="johndoe"
+         
           onChange={(e) => setUsername(e.target.value)}
         />
 
-        <label htmlFor="">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           name="password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
-        {error && error}
+        {error && <p className="error">{error}</p>}
+
+        {/* Forgot Password Link */}
+        <div className="forgot-password-container">
+          <button
+            type="button"
+            className="forgot-password"
+            onClick={() => navigate("/send-otp")}
+          >
+            Forgot Password?
+          </button>
+        </div>
       </form>
     </div>
   );

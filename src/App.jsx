@@ -13,12 +13,16 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import ResetPasswordPage from "../src/components/ForgotPassword/resetpassword"; // Import ResetPasswordPage
+import SendOtpPage from "../src/components/ForgotPassword/sendotp"; // Import SendOtpPage
+import VerifyOtpPage from "../src/components/ForgotPassword/verifyotp"; // Import VerifyOtpPage
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 import Pay from "./pages/pay/Pay";
 import Success from "./pages/success/Success";
+
 function App() {
   const queryClient = new QueryClient();
 
@@ -78,6 +82,18 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/reset-password", // Reset Password Route
+          element: <ResetPasswordPage />,
+        },
+        {
+          path: "/send-otp", // Send OTP Route
+          element: <SendOtpPage />,
+        },
+        {
+          path: "/verify-otp", // Verify OTP Route
+          element: <VerifyOtpPage />,
         },
         {
           path: "/pay/:id",
